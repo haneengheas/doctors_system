@@ -18,12 +18,13 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
       body: Column(
         children: [
           Logo(
-            height: 2.5,
+            height: 2.7,
             width: 2.5,
           ),
           Container(
             height: sizeFromHeight(context, 2.5),
-            width: sizeFromWidth(context, 1),
+            width: sizeFromWidth(context, 1.1),
+            margin: const EdgeInsets.symmetric(horizontal: 5),
             decoration: BoxDecoration(
               image: const DecorationImage(
                   image: AssetImage('assets/doctor.jpg'), fit: BoxFit.contain),
@@ -31,13 +32,13 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
             ),
           ),
           const SizedBox(
-            height: 25,
+            height: 15,
           ),
           const Text(
             'Your All Medical History In One Place',
             style: TextStyle(
                 color: Colors.black45,
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.bold),
           ),
           const SizedBox(
@@ -45,23 +46,32 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
           ),
           Stack(
             children: [
-              Container(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                alignment: Alignment.center,
-                height: 45,
-                width: sizeFromWidth(context, 2.3),
-                decoration: BoxDecoration(
-                  color: white,
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(color: blue, width: 2),
-                ),
-                child: const Text(
-                  'Get Started',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+              InkWell(
+                onTap: (){
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                          const SingInScreen()));
+                },
+                child: Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  alignment: Alignment.center,
+                  height: 45,
+                  width: sizeFromWidth(context, 2),
+                  decoration: BoxDecoration(
+                    color: white,
+                    borderRadius: BorderRadius.circular(30),
+                    border: Border.all(color: blue, width: 2),
+                  ),
+                  child: const Text(
+                    'Get Started',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
               Positioned(
@@ -74,11 +84,7 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
                         color: blue, shape: BoxShape.circle),
                     child: IconButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const SingInScreen()));
+
                         },
                         icon: const Icon(
                           Icons.arrow_forward_outlined,
