@@ -58,7 +58,6 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
           Expanded(
             child: Container(
               width: sizeFromWidth(context, 1),
-              // height: sizeFromHeight(context, 1),
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
